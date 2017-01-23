@@ -1,0 +1,27 @@
+// 1
+mysql -ctl start
+
+mysql -uani1m
+
+// 2
+CREATE DATABASE decodemtl_test;
+
+CREATE DATABASE decodemtl_addressbook;
+
+// 3
+DROP DATABASE decodemtl_test;
+
+// 4
+SHOW DATABASES;
+
++-----------------------+
+| Database              |
++-----------------------+
+| information_schema    |
+| c9                    |
+| decodemtl_addressbook |
+| mysql                 |
+| performance_schema    |
+| phpmyadmin            |
++-----------------------+
+
