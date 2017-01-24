@@ -25,3 +25,66 @@ SHOW DATABASES;
 | phpmyadmin            |
 +-----------------------+
 
+// 5
+USE decodemtl_addressbook;
+
+ - CREATE TABLE Account(`id`int(12) NOT NULL AUTO_INCREMENT , 
+ `LastName` varchar(30) NOT NULL, PRIMARY KEY (`id`) ) ;  
+ 
+ - CREATE TABLE Addressbook ( `id` int(12)PRIMARY KEY, 
+ `firstName` varchar(100), `lastName` varchar(10));
+ 
+ - CREATE TABLE Entry(`id` int(12)PRIMARY KEY, `street_number` varchar(50), 
+ `streeet_number` varchar(100));
+ 
+ - CREATE TABLE test(`id` int(12),` test_file` varchar(100));
+
+// 6
+ - DROP TABLE test;
+ 
+ // 7 
+ - SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| Addressbook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
+
+// 8 
+
+Describe Account
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(12)     | NO   | PRI | NULL    | auto_increment |
+| LastName | varchar(30) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+ALTER TABLE  Addressbook CHANGE id2 id int(12) NOT NULL auto_increment;
+
+Describe Addressbook;
++-----------+--------------+------+-----+----+----------+---+----+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(12)     | NO   | PRI | NULL    | auto_increment |
+| LastName | varchar(30) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+
+DROP TABLE Entry;
+CREATE TABLE Entry (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id));
+ALTER TABLE Entry ADD COLUMN type ENUM('work', 'home', 'other');
+ALTER TABLE Entry ADD COLUMN subtype ENUM('phone','address', 'email');
+
+Describe Entry;
++---------+---------------------------------+------+-----+---------+----------------+
+| Field   | Type                            | Null | Key | Default | Extra          |
++---------+---------------------------------+------+-----+---------+----------------+
+| id      | int(11)                         | NO   | PRI | NULL    | auto_increment |
+| type    | enum('work','home','other')     | YES  |     | NULL    |                |
+| subtype | enum('phone','address','email') | YES  |     | NULL    |                |
++---------+---------------------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
